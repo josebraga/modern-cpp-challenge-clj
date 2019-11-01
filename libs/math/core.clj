@@ -4,3 +4,4 @@
 
 (load-file "./libs/math/gcd.clj")
 (load-file "./libs/math/lcm.clj")
+(load-file "./libs/math/prime.clj")
