@@ -48,9 +48,24 @@
 (p-prime-less-than? 2260)
 (p-prime-less-than? 2290)
 
-(println "\n# 1.5")
+(println "\n# 1.5 sexy primes less than?")
 (p-sexy-primes? 12)
 (p-sexy-primes? 120)
 (p-sexy-primes? 1200)
 
-(println "\n")
+(println "\n# 1.6 Abundant numbers and sum up to")
+(defn p-abundant? [n]
+  (if (is-abundant? n)
+    (println n "->" (get-sum-proper-divisors n))))
+
+(defn up-to-abundant [n]
+  (println "Abundant numbers up to" n)
+  (all-up-to? is-abundant? p-abundant? n))
+
+(up-to-abundant 5)
+(up-to-abundant 15)
+(up-to-abundant 50)
+(up-to-abundant 100)
+
+(println "\n# 1.7 Pairs of amicable numbers up to? (in book 1'000'000)")
+(get-amicable-numbers (Integer/parseInt (read-line)))
