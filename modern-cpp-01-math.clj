@@ -6,17 +6,12 @@
 
 (load-file "./libs/math/core.clj")
 
-(defn p-gcd [a, b]
-  (println a b "->" (gcd a b)))
+; AUXILIARY
+(defn simple-print [f, a]
+  (println a "->" (f a)))
 
-(defn p-lcm [a, b]
-  (println a b "->" (gcd a b)))
-
-(defn p-prime? [n]
-  (println n "->" (prime? n)))
-
-(defn p-prime-less-than? [n]
-  (println n "->" (prime-less-than? n)))
+(defn simple-print-2 [f, a, b]
+  (println a b "->" (f a b)))
 
 (defn p-sexy-primes? [n]
   (println n "->")
@@ -24,29 +19,29 @@
   (println))
 
 (println "\n# 1.2 greatest common divisor?")
-(p-gcd 15 6)
-(p-gcd 45 30)
-(p-gcd 90 60)
+(simple-print-2 gcd 15 6)
+(simple-print-2 gcd 45 30)
+(simple-print-2 gcd 90 60)
 
 (println "\n# 1.3 least common multiple?")
-(p-lcm 15 6)
-(p-lcm 45 30)
-(p-lcm 90 60)
-(p-lcm 21 6)
+(simple-print-2 lcm 15 6)
+(simple-print-2 lcm 45 30)
+(simple-print-2 lcm 90 60)
+(simple-print-2 lcm 21 6)
 
 (println "\n# 1.4 is prime?")
-(p-prime? 1)
-(p-prime? 6)
-(p-prime? 7)
-(p-prime? 149)
-(p-prime? 150)
-(p-prime? 2287)
+(simple-print prime? 1)
+(simple-print prime? 6)
+(simple-print prime? 7)
+(simple-print prime? 149)
+(simple-print prime? 150)
+(simple-print prime? 2287)
 
 (println "\n# 1.4 prime less than?")
-(p-prime-less-than? 8)
-(p-prime-less-than? 152)
-(p-prime-less-than? 2260)
-(p-prime-less-than? 2290)
+(simple-print prime-less-than? 8)
+(simple-print prime-less-than? 152)
+(simple-print prime-less-than? 2260)
+(simple-print prime-less-than? 2290)
 
 (println "\n# 1.5 sexy primes less than?")
 (p-sexy-primes? 12)
@@ -67,5 +62,22 @@
 (up-to-abundant 50)
 (up-to-abundant 100)
 
-(println "\n# 1.7 Pairs of amicable numbers up to? (in book 1'000'000)")
-(get-amicable-numbers (Integer/parseInt (read-line)))
+(println "\n# 1.7 Pairs of amicable numbers up to?")
+;(get-amicable-numbers (Integer/parseInt (read-line)))
+(get-amicable-numbers 1000)
+
+(println "\n# 1.8 List of 3-digit armstrong numbers:")
+(is-armstrong-3)
+
+
+(println "\n# 1.9 Prime factors of a number:")
+;(simple-print prime-factors? -12)
+(simple-print prime-factors? 1)
+(simple-print prime-factors? 2)
+(simple-print prime-factors? 8)
+(simple-print prime-factors? 12)
+(simple-print prime-factors? 16)
+(simple-print prime-factors? 25)
+(simple-print prime-factors? 315)
+(simple-print prime-factors? 400)
+
